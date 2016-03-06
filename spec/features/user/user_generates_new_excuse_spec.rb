@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'user generates a new migue' do
+feature 'user generates a new excuse' do
   scenario 'successfuly' do
     excuses = create_list(:excuse, 10)
 
