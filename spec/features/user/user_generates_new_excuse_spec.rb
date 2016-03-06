@@ -7,11 +7,12 @@ feature 'user generates a new excuse' do
     visit root_path
 
     click_on 'Gerar migué'
-    expect(has_any_excuse?(excuses)).to be true
+    expect(page_has_any_excuse?(excuses)).to be true
+    expect(page).to have_css 'a', text: 'Gerar novo migué'
   end
 
   # verify if page has any excuse
-  def has_any_excuse?(excuses)
+  def page_has_any_excuse?(excuses)
     excuses.each do |excuse|
       return true if page.text.include? excuse.text
     end

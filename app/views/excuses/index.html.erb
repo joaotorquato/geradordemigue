@@ -18,7 +18,8 @@
 <div class="row">
   <div class="col-md-offset-4 col-md-4 col-sm-12 text-justify">
     <div class="form-group">
-      <textarea class="form-control" rows="5" readonly="readonly">
+      <textarea class="form-control" rows="5" readonly="readonly"
+        style="background-color:white">
         <% if @excuse.present? %>
         <%= @excuse.text %>
         <% end %>
@@ -28,6 +29,10 @@
 </div>
 <div class="row">
   <div class="col-md-offset-4 col-md-4 col-sm-12 text-center">
+    <% unless @excuse.present? %>
     <%= link_to "Gerar migué", generate_excuses_path, class: 'btn btn-primary' %>
+    <% else %>
+    <%= link_to "Gerar novo migué", generate_excuses_path, class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>

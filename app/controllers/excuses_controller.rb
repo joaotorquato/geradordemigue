@@ -1,5 +1,4 @@
 class ExcusesController < ApplicationController
-
   def index
   end
 
@@ -7,5 +6,4 @@ class ExcusesController < ApplicationController
     @excuse = Excuse.generate
     render :index
   end
-
 end

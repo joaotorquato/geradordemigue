@@ -9,17 +9,16 @@ describe Excuse do
 
     it 'returns a random excuse' do
       excuses = create_list(:excuse, 10)
-      expect(is_equal?(excuses)).to be true
+      expect(equal_to_any_excuse?(excuses)).to be true
     end
 
     # generate should be equal to any excuse
-    def is_equal?(excuses)
+    def equal_to_any_excuse?(excuses)
       generate = Excuse.generate
       excuses.each do |excuse|
         return true if generate.text.include? excuse.text
       end
-      return false
+      false
     end
-
   end
 end

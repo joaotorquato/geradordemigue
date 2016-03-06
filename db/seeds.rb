@@ -5,4 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-FactoryGirl.create_list(:excuse, 10);
+# FactoryGirl.create_list(:excuse, 10);
+Excuse.create([{ text: 'To estacionando na P2' },
+               { text: 'To estacionando na frente da casa do Vizão' },
+               { text: 'Favor desconsiderar' },
+               { text: 'Alagou a autonomista' },
+               { text: 'Hoje tem jogo do grêmio osasco' },
+               { text: 'Ow, desculpa ai, mó vergonha' },
+               { text: 'Melhor não mano, tem mó galera do rochdale que vai lá' },
+               { text: 'To sem celular mano' }])
