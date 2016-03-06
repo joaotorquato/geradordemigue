@@ -5,6 +5,7 @@ class ExcusesController < ApplicationController
 
   def generate
     @excuse = Excuse.generate
+    render :index
   end
 
 end

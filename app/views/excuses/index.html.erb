@@ -1,1 +1,33 @@
-<%= link_to "Gerar migué", generate_excuses_path %>
+<div class="row">
+  <div class="col-md-offset-4 col-md-4 col-sm-12 text-center">
+    <h1>Gerador de migué</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-offset-4 col-md-4 col-sm-12 text-center">
+    <p>
+      Já não sabe mais o que inventar para os seus amigos?<br>
+      Já cansou de falar aquela mesma velha frase "Estou preso no trânsito"
+      ou "Desculpe, não ouvi o telefone tocar"?<br>
+      Seus problemas acabaram!<br>
+      Agora como o gerador de migué, você terá sempre uma história
+      nova para contar!
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-offset-4 col-md-4 col-sm-12 text-justify">
+    <div class="form-group">
+      <textarea class="form-control" rows="5" readonly="readonly">
+        <% if @excuse.present? %>
+        <%= @excuse.text %>
+        <% end %>
+      </textarea>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-offset-4 col-md-4 col-sm-12 text-center">
+    <%= link_to "Gerar migué", generate_excuses_path, class: 'btn btn-primary' %>
+  </div>
+</div>
