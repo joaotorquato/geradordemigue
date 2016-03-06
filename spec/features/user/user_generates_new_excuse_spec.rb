@@ -16,6 +16,6 @@ feature 'user generates a new excuse' do
     excuses.each do |excuse|
       return true if page.text.include? excuse.text
     end
-    return false
+    false
   end
 end
