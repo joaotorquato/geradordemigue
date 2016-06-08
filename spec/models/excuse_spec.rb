@@ -1,24 +1,20 @@
 require 'rails_helper'
 
 describe Excuse do
-  describe '#generate' do
+  describe '.generate' do
     it 'returns a excuse' do
       excuse = create(:excuse)
-      expect(Excuse.generate).to eq excuse
+      expect(Excuse.generate(nil)).to eq excuse
     end
 
-    it 'returns a random excuse' do
-      excuses = create_list(:excuse, 10)
-      expect(equal_to_any_excuse?(excuses)).to be true
-    end
-
-    # generate should be equal to any excuse
-    def equal_to_any_excuse?(excuses)
-      generate = Excuse.generate
-      excuses.each do |excuse|
-        return true if generate.text.include? excuse.text
+    it 'returns a different excuse from the last one' do
+      create_list(:excuse, 20)
+      last_excuse = nil
+      1000.times do
+        new_excuse = Excuse.generate(last_excuse)
+        expect(new_excuse).not_to eq last_excuse
+        last_excuse = new_excuse
       end
-      false
     end
   end
 end

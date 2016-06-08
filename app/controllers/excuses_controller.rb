@@ -3,7 +3,9 @@ class ExcusesController < ApplicationController
   end
 
   def generate
-    @excuse = Excuse.generate
+    last_excuse = session[:last_excuse] || nil
+    @excuse = Excuse.generate(last_excuse)
+    session[:last_excuse] = @excuse
     render :index
   end
 end
