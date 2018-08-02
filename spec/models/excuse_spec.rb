@@ -8,12 +8,12 @@ describe Excuse do
     end
 
     it 'returns a different excuse from the last one' do
-      create_list(:excuse, 20)
-      last_excuse = nil
+      create_list(:excuse, 15)
+      last_excuse_id = nil
       1000.times do
-        new_excuse = Excuse.generate(last_excuse)
-        expect(new_excuse).not_to eq last_excuse
-        last_excuse = new_excuse
+        new_excuse = Excuse.generate(last_excuse_id)
+        expect(new_excuse.id).not_to eq last_excuse_id
+        last_excuse_id = new_excuse.id
       end
     end
   end
